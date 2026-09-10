@@ -1,0 +1,9 @@
+config.json
+state/heartbeat.json
+inbox/task_*.json
+processing/task_*.json
+outbox/task_*.json
+archive/task_*.json
+**/__pycache__/
+*.pyc
+.venv/
