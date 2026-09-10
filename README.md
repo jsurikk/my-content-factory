@@ -83,6 +83,11 @@ content-factory/
 │   ├── SETUP.md                   ← Установка на Mac/Linux
 │   └── VPS-INSTALL.md             ← Установка на VPS (24/7)
 │
+├── cursor-desktop-bridge/         ← Мост Cursor Chat ↔ десктоп (очередь задач)
+│   ├── README.md                  ← Файловый обмен / HTTP API / deploy прототипа
+│   ├── bridge/                    ← enqueue, watcher, status, server
+│   └── scripts/                   ← queue_deploy.py, selftest.py
+│
 └── README.md                      ← Ты здесь
 ```
 

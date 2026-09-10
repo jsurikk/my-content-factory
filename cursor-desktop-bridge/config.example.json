@@ -1,0 +1,19 @@
+{
+  "bridge_dir": ".",
+  "poll_interval_sec": 2,
+  "heartbeat_max_age_sec": 30,
+  "worker_id": "desktop-main",
+  "http": {
+    "enabled": true,
+    "host": "127.0.0.1",
+    "port": 8787,
+    "token": "change-me"
+  },
+  "handlers": {
+    "deploy_local_prototype": {
+      "workdir": "",
+      "command": "",
+      "timeout_sec": 600
+    }
+  }
+}

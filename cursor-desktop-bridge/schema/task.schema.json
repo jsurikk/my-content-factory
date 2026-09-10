@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/cursor-desktop-bridge/task.schema.json",
+  "title": "CursorDesktopBridgeTask",
+  "type": "object",
+  "required": ["id", "type", "created_at", "status", "payload"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 8,
+      "description": "Unique task id, e.g. task_20260910_215100_ab12"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "deploy_local_prototype",
+        "run_command",
+        "ping",
+        "custom"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "string",
+      "description": "Where the task came from (cursor_chat, api, manual)"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 5
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "claimed",
+        "running",
+        "succeeded",
+        "failed",
+        "rejected",
+        "offline_pending"
+      ]
+    },
+    "requires_online": {
+      "type": "boolean",
+      "default": true,
+      "description": "If true, desktop app must be online/heartbeat fresh to claim"
+    },
+    "payload": {
+      "type": "object",
+      "description": "Handler-specific payload"
+    },
+    "result": {
+      "type": ["object", "null"]
+    },
+    "error": {
+      "type": ["string", "null"]
+    },
+    "claimed_by": {
+      "type": ["string", "null"]
+    },
+    "claimed_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    }
+  }
+}
